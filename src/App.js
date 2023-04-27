@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import ApiMovie from "./ApiMovie";
-import FeaturedMovie from "./compontents/FeaturedMovie";
-import Header from "./compontents/Header";
-import MovieSection from "./compontents/MovieSection";
-
+import FeaturedMovie from "./components/FeaturedMovie";
+import Header from "./components/Header";
+import MovieSection from "./components/MovieSection";
 import "./App.css";
-
-
 
 
 function App() {
@@ -14,9 +11,7 @@ function App() {
   const [featuredData, setfeaturedData] = useState(null)
   
   
-  
-
-  useEffect(() => {
+    useEffect(() => {
     const loadAllMovies = async () => {
     //liste de tous les film
       let list = await ApiMovie.getHomeMovies() 

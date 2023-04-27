@@ -9,7 +9,6 @@ function FeaturedMovie({ films }) {
     genres.push(genre.name)
   }
   
-
     return (
       <section className="featured" 
       style={{
