@@ -23,9 +23,6 @@ const SearchBar = ({ setSearchResults }) => {
   return (
     <form className="search-bar" onSubmit={handleSubmit}>
       <input type="text" placeholder="Titres, personnes, genres" value={query} onChange={handleInputChange} />
-      <button type="submit" className="search-button">
-        <i className="fa fa-search"></i>
-      </button>
     </form>
   );
 };
