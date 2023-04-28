@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css';
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [searchResults, setSearchResults] = useState([]);
@@ -19,7 +20,7 @@ function Header() {
       </div>
 
       <div className="searchbar">
-        <SearchBar setSearchResults={setSearchResults} />
+        <Link to={"/home/details"}><SearchBar setSearchResults={setSearchResults} /></Link>
       </div>
 
       <div className="header--user">

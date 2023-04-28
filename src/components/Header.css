@@ -34,9 +34,6 @@ header {
     text-decoration: none;
   }
 
-  .nav__content a{
-  }
-
   .header--user {
     height: 50px;
     /* flex-grow: 1;  */

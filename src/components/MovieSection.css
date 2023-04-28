@@ -7,12 +7,14 @@
 }
 
 .movieRow-listarea{
-    overflow-x: hidden;
+    overflow-x: visible;
+    overflow-y: hidden;
     padding-left: 30px
 }
 
 .movieRow-list{
-    width: 999999999px;
+    width: 200em;
+    overflow-y: hidden;
 }
 
 .movieRow-item{
@@ -62,4 +64,8 @@
         opacity: 100px;
     }
     
+}
+
+.item__title{
+    font-size: medium;
 }

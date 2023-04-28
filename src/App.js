@@ -1,54 +1,27 @@
-import { useEffect, useState } from "react";
-import ApiMovie from "./ApiMovie";
-import FeaturedMovie from "./components/FeaturedMovie";
-import Header from "./components/Header";
-import MovieSection from "./components/MovieSection";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+// import Home from "./compontents/Home";
 import "./App.css";
+// import "./Header.css";
+// import "./FeaturedMovie.css";
+// import "./MovieSection";
+// import MovieSection from "./compontents/MovieSection";
+import Home from "./components/Home";
+import Details from "./components/Details"
+import DetailsFilm from "./components/DeatilsFilm";
 
 
 function App() {
-  const [moviesList, setMoviesList] = useState([])
-  const [featuredData, setfeaturedData] = useState(null)
-  
-  
-    useEffect(() => {
-    const loadAllMovies = async () => {
-    //liste de tous les film
-      let list = await ApiMovie.getHomeMovies() 
-      setMoviesList(list)
-
-    //un seul film a l'affiche
-      let originals = list.filter((oneMovie) => oneMovie.slug === "top-rated")
-      
-      let chooseRandomMovie = Math.floor(
-        Math.random() * (originals[0].items.results.length - 1)
-      )
-      let chosen = originals[0].items.results[chooseRandomMovie]
-      let chosenInfo = await ApiMovie.getyMovieInfo(chosen.id, "movie")
-      setfeaturedData(chosenInfo)
-     
-    }
-    
-    loadAllMovies()
-    
-
-  }, [])
-
-
   return (
-    <div className="page">
-    <Header />
-    {featuredData && <FeaturedMovie films={featuredData} />}
-    <section className="lists">
-      {moviesList.map((item, key) => (
-      <MovieSection key={key} title={item.title} items={item.items} />
-    
-  ))}
-  
-  
-</section>
-</div>
+      
+      <Routes>
+        <Route path="/clonenetflixprojet" element={<Home/>}/>
+        <Route path='/home/details' Component={Details}/>
+        <Route path='/home/detailsfilm' Component={DetailsFilm}/>
 
-  )}
+        {/* <Route path="/page" element={<MovieSection/>}/> */}
+      </Routes>
+  );
+}
 
 export default App;

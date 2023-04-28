@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const SearchBar = ({ setSearchResults }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState();
 
   const handleInputChange = event => {
     setQuery(event.target.value);
