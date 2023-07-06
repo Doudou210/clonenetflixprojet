@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './SearchBar.css'
 
 
 const SearchBar = ({ setSearchResults }) => {
@@ -21,9 +22,12 @@ const SearchBar = ({ setSearchResults }) => {
   };
 
   return (
-    <form className="search-bar" onSubmit={handleSubmit}>
-      <input type="text" placeholder="Titres, personnes, genres" value={query} onChange={handleInputChange} />
-    </form>
+    <div className='wrapper'>
+      <form className="search-bar" onSubmit={handleSubmit}>
+        <input type="text" placeholder="Titres, personnes, genres" value={query} onChange={handleInputChange} />
+      </form>
+    </div>
+    
   );
 };
 

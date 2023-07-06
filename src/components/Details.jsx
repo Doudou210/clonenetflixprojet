@@ -11,7 +11,7 @@ export default function Details(props){
   const [searchResults, setSearchResults] = useState([]);
     return(
         <div className="searcher">
-            <div className="searchbar">
+            <div className="search__bar">
             <Link to={"/clonenetflixprojet"}>
                 <span class="material-symbols-outlined">
                     arrow_back_ios
@@ -24,7 +24,7 @@ export default function Details(props){
             <div className="search__image">
                 <div className="search" key={movie.id}>
                     <h2>{movie.title}</h2>
-                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>
                     <p>{movie.overview}</p>
                 </div>
             </div>
