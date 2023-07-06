@@ -13,7 +13,6 @@ import DetailsFilm from "./components/DeatilsFilm";
 
 function App() {
   return (
-  return (
       
       <Routes>
         <Route path="/clonenetflixprojet" element={<Home/>}/>
