@@ -35,35 +35,15 @@ export default function Home(){
 
 
   return (
-        <div className="page">
-        <Header />
-        {featuredData && <FeaturedMovie films={featuredData} />}
-        <section className="lists">
-          {moviesList.map((item, key) => (
-              <MovieSection key={key} title={item.title} items={item.items} />
-        
-          ))}
-  
-
-        {/* <div className="searchbar">
-        {console [searchResults, setSearchResults] = useState([])}
-        </div> */}
-
-  
-    <div className="recherche">
-      
-      <SearchBar setSearchResults={setSearchResults} />
-      {searchResults.map(movie => (
-            <div key={movie.id}>
-              <h2>{movie.title}</h2>
-              <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-              <p>{movie.overview}</p>
-            </div>
-      
-          ))}
+    <div className="page">
+      <Header />
+      {featuredData && <FeaturedMovie films={featuredData} />}
+      <section className="lists">
+        {moviesList.map((item, key) => (
+          <MovieSection key={key} title={item.title} items={item.items} />
+        ))}
+      </section>
     </div>
-  </section>
-  </div>
 
 
   )
